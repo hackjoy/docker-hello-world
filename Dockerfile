@@ -9,7 +9,7 @@ RUN     yum install -y npm
 # Bundle app source
 ADD . /src
 # Install app dependencies
-RUN cd /src; npm install
+RUN cd /src; npm cache clean; npm install
 
 EXPOSE  8080
 CMD ["node", "/src/index.js"]
